@@ -26,4 +26,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_d710.mk
+    $(LOCAL_DIR)/full_d710.mk \
+    $(LOCAL_DIR)/aosp_d710.mk \
+    $(LOCAL_DIR)/du_d710.mk

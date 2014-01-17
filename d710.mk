@@ -96,6 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.usb.setting=0 \
     persist.service.adb.enable=1 \
+    persist.sys.usb.config=mass_storage,adb \
     persist.service.usb.hubport=4
 
 # Telephony property for CDMA
@@ -135,11 +136,18 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # enable repeatable keys in cwm
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cwm.enable_key_repeat=true
+    ro.cwm.enable_key_repeat=true \
+
+#recovery
+PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab 
 
 # Include common makefile
 $(call inherit-product, device/samsung/galaxys2-common/common.mk)
+
+# Include device overlays 
 DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/overlay \
     device/samsung/galaxys2-common/overlay
+
 $(call inherit-product-if-exists, vendor/samsung/d710/d710-vendor.mk)
