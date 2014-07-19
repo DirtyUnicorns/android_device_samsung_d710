@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 -include device/samsung/galaxys2-common/BoardCommonConfig.mk
@@ -29,10 +28,10 @@ TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
 TARGET_KERNEL_CONFIG := custom_d710_defconfig
 
 # Selinux
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
     device/samsung/d710/selinux
 
-BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_UNION += \
     device.te \
     file.te \
     file_contexts \
@@ -75,4 +74,4 @@ TARGET_OTA_ASSERT_DEVICE := epic4gtouch,SPH-D710,d710,smdk4210,SPH-D710VMUB,SPH-
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/d710/BoardConfigVendor.mk
 
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/d710/shbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys2-common/shbootimg.mk
