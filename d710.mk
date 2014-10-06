@@ -103,7 +103,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.connectivity.type=CDMA1 \
     mobiledata.interfaces=ppp0,wlan0,uwbr0 \
     ro.telephony.ril_class=SamsungCDMAv6RIL \
-    ro.ril.samsung_cdma=true
+    ro.ril.samsung_cdma=true \
+    ro.telephony.ril.v3=skipdatareg
 
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
